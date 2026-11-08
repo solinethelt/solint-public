@@ -1,0 +1,87 @@
+openapi: 3.0.3
+info:
+  title: SOLINT PUBLIC API
+  version: 1.0.0
+  description: Phase 0 API baseline for SOLINT PUBLIC.
+servers:
+  - url: https://api.solint.example.com/api/public/v1
+paths:
+  /auth/request-otp:
+    post:
+      summary: Request OTP for mobile login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [mobileNumber]
+              properties:
+                mobileNumber:
+                  type: string
+      responses:
+        '200':
+          description: OTP sent or challenge created
+  /auth/verify-otp:
+    post:
+      summary: Verify OTP and establish session
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [mobileNumber, otp]
+              properties:
+                mobileNumber:
+                  type: string
+                otp:
+                  type: string
+      responses:
+        '200':
+          description: Login successful
+  /devices/register:
+    post:
+      summary: Register active trusted device
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [publicKey]
+              properties:
+                publicKey:
+                  type: string
+      responses:
+        '200':
+          description: Device registered
+  /sync/records:
+    post:
+      summary: Upload pending local records
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [records, idempotencyKey]
+              properties:
+                idempotencyKey:
+                  type: string
+                records:
+                  type: array
+                  items:
+                    type: object
+      responses:
+        '200':
+          description: Sync accepted
+components:
+  schemas:
+    Error:
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
