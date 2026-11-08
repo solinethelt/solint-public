@@ -1,0 +1,12 @@
+{
+  "name": "SOLINT PUBLIC",
+  "short_name": "SOLINT",
+  "description": "پایهٔ برنامهٔ SOLINT PUBLIC",
+  "lang": "fa",
+  "dir": "rtl",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f6f8fb",
+  "theme_color": "#f6f8fb"
+}

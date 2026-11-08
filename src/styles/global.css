@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap');
+
+:root {
+  font-family: Vazirmatn, system-ui, sans-serif;
+  color: #172b4d;
+  background: #f6f8fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid #087f8c;
+  outline-offset: 3px;
+}
+
+.app-shell {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 1.25rem;
+}
+
+.welcome-card {
+  width: min(100%, 42rem);
+  padding: clamp(1.5rem, 5vw, 3rem);
+  border: 1px solid #dfe6ef;
+  border-radius: 1.25rem;
+  background: #fff;
+  box-shadow: 0 1rem 3rem rgb(23 43 77 / 8%);
+}
+
+.eyebrow {
+  color: #087f8c;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+h1 {
+  margin-block: 0.5rem 1rem;
+  font-size: clamp(1.5rem, 5vw, 2.25rem);
+  line-height: 1.4;
+}
+
+p {
+  line-height: 1.8;
+}
+
+.status {
+  margin-block: 1.5rem 0;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  background: #e8f4f4;
+  color: #075e67;
+}
